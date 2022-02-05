@@ -74,9 +74,15 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="#">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Identification_admi.html">
+              <i class="mdi mdi-account-check"></i>
+              <span class="menu-title">Identification</span>
             </a>
           </li>
           <!-- partial 
@@ -102,19 +108,19 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/basic_elements.html">Etudiant </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/personnel.html">Personel</a></li>
+               
+                <li class="nav-item"> <a class="nav-link" href="enregistrement_etu.html">Etudiant</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="charts_admi.html">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">Statistiques</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="basic-table.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Liste etudiants</span>
             </a>
@@ -135,11 +141,11 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li> -->
               </ul>
             </div>
           </li>
@@ -156,11 +162,10 @@
       </nav>
       <!-- partial -->
       <div class="main-panel" >
-        <div class="content-wrapper"  style="background-image: url(images/faces/ISSAM_Institut_Logo_200.png);
-        ">
+        <div class="content-wrapper">
           
         
-          <!-- <div class="row">
+           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body dashboard-tabs p-0">
@@ -177,7 +182,7 @@
                         <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-calendar-heart icon-lg me-3 text-primary"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Start date</small>
+                            <small class="mb-1 text-muted">Date debut</small>
                             <div class="dropdown">
                               <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
@@ -193,7 +198,7 @@
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Total views</small>
+                            <small class="mb-1 text-muted">Total identifier</small>
                             <h5 class="me-2 mb-0">9833550</h5>
                           </div>
                         </div>
@@ -204,31 +209,29 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div> 
          
-          <!-- <div class="col-lg-12 grid-margin stretch-card">
+          <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Striped Table</h4>
-                <div style="display: flex; ">
+                <h4 class="card-title">Tous les etudiants</h4>
+                <div style="display:flex">
                   <div>
-              </div>
-              <div class="btn-group-vertical" role="group" aria-label="Basic example" style="margin-left: 88%;">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Trier</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item">Nom</a>
-                    <a class="dropdown-item">Matricule</a>
-                    <a class="dropdown-item">Spécialite</a>
-                    <a class="dropdown-item">Niveau</a>
-                    <a class="dropdown-item">sexe</a>
-                    <a class="dropdown-item">Age</a>
-                    <a class="dropdown-item">Solde</a>
-                  </div>                          
+                <p class="card-description">
+                </p></div> <div class="btn-group-vertical" role="group" aria-label="Basic example" style="margin-left: 88%;">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Trier</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item">Nom</a>
+                      <a class="dropdown-item">Matricule</a>
+                      <a class="dropdown-item">Spécialite</a>
+                      <a class="dropdown-item">Niveau</a>
+                      <a class="dropdown-item">sexe</a>
+                      <a class="dropdown-item">Age</a>
+                      <a class="dropdown-item">Solde</a>
+                    </div>                          
+                  </div>
                 </div>
-              </div>
-              <div >
-              </div>
               </div>
                 <div class="table-responsive">
                   <table class="table table-striped">
@@ -238,16 +241,25 @@
                           User
                         </th>
                         <th>
-                          First name
+                          Name
                         </th>
                         <th>
                           Progress
                         </th>
                         <th>
-                          Amount
+                          %
                         </th>
                         <th>
-                          Deadline
+                          current account paid
+                        </th>
+                        <th>
+                          Date of payment
+                        </th>
+                        <th>
+                          Amount to be paid
+                        </th>
+                        <th>
+                          Developper
                         </th>
                       </tr>
                     </thead>
@@ -265,10 +277,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $ 77.99
                         </td>
                         <td>
                           May 15, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -284,10 +305,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $245.30
                         </td>
                         <td>
                           July 1, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -303,10 +333,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $138.00
                         </td>
                         <td>
                           Apr 12, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -322,10 +361,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $ 77.99
                         </td>
                         <td>
                           May 15, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -341,10 +389,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $ 160.25
                         </td>
                         <td>
                           May 03, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -360,10 +417,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $ 123.21
                         </td>
                         <td>
                           April 05, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                       <tr>
@@ -379,10 +445,19 @@
                           </div>
                         </td>
                         <td>
+                          30%
+                        </td>
+                        <td>
                           $ 150.00
                         </td>
                         <td>
                           June 16, 2015
+                        </td>
+                        <td>
+                          $ 234
+                        </td>
+                        <td>
+                          <button class="mdi mdi-arrow-right">voir plus</button>
                         </td>
                       </tr>
                     </tbody>
@@ -391,9 +466,10 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div> 
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
+       
         <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
           <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="nous.html" target="_blank">SIAPP.com </a>2021</span>
