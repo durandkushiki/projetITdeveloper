@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>sovabity</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/logo-mini.svg" />
+  <link rel="shortcut icon" href="images/logo-mini.svg" />
 </head>
 <body>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/>SIAPP</a>
-          <a class="navbar-brand brand-logo-mini" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo-mini.svg" alt="logo"/>SIAPP</a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -48,7 +48,7 @@
          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
+              <img src="images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
               <span class="nav-profile-name">Administrateur</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -74,15 +74,9 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-        <a class="nav-link" href="../../user_table/Accueil.html">
+            <a class="nav-link" href="index.html">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../Identification_sur.html">
-              <i class="mdi mdi-account-check"></i>
-              <span class="menu-title">Identification</span>
             </a>
           </li>
           <!-- partial 
@@ -101,11 +95,30 @@
           </li>
           -->
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/charts/chartjs.html">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Enregistrement</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="basic_elements.php">Etudiant </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/forms/personnel.html">Personel</a></li> -->
+              </ul>
+            </div>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">Statistiques</span>
             </a>
-          </li>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Liste etudiants</span>
+            </a>
+          </li> -->
             <!-- partial 
           <li class="nav-item">
             <a class="nav-link" href="pages/icons/mdi.html">
@@ -122,9 +135,11 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
               </ul>
             </div>
           </li>
@@ -142,6 +157,8 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
+          
+        
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
@@ -188,44 +205,64 @@
               </div>
             </div>
           </div>
-        <!-- c'est ici que je dois  metre la façon dont les infos seront affichées --> 
-        <!-- 
-
-         -->
-         <div class="col-lg-12 grid-margin stretch-card">
+         
+          <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Information d'identificaion</h4>
-                <p class="card-description">
-                code : 
-                <!-- Matricule :-->
-                <!-- Code QR : <img src="" alt=""> QR code -->
-                </p>
-                <div class="table-responsive pt-3">
-                  <table class="table table-dark">
+                <h4 class="card-title">Striped Table</h4>
+                <div style="display: flex; ">
+                  <div>
+              </div>
+              <div class="btn-group-vertical" role="group" aria-label="Basic example" style="margin-left: 88%;">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Trier</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item">Nom</a>
+                    <a class="dropdown-item">Matricule</a>
+                    <a class="dropdown-item">Spécialite</a>
+                    <a class="dropdown-item">Niveau</a>
+                    <a class="dropdown-item">sexe</a>
+                    <a class="dropdown-item">Age</a>
+                    <a class="dropdown-item">Solde</a>
+                  </div>                          
+                </div>
+              </div>
+              <div >
+              </div>
+              </div>
+                <div class="table-responsive">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
                         <th>
-                          Specilite
+                          User
                         </th>
                         <th>
-                          Nom et prenom
+                          First name
                         </th>
                         <th>
-                          Montant payé
+                          Progress
                         </th>
                         <th>
-                          Date de payement
+                          Amount
+                        </th>
+                        <th>
+                          Deadline
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>
-                          1
+                        <td class="py-1">
+                          <img src="../../images/faces/face1.jpg" alt="image"/>
                         </td>
                         <td>
                           Herman Beck
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
                         </td>
                         <td>
                           $ 77.99
@@ -234,14 +271,126 @@
                           May 15, 2015
                         </td>
                       </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face2.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          Messsy Adam
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $245.30
+                        </td>
+                        <td>
+                          July 1, 2015
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face3.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          John Richards
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $138.00
+                        </td>
+                        <td>
+                          Apr 12, 2015
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face4.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          Peter Meggik
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $ 77.99
+                        </td>
+                        <td>
+                          May 15, 2015
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face5.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          Edward
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $ 160.25
+                        </td>
+                        <td>
+                          May 03, 2015
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face6.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          John Doe
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $ 123.21
+                        </td>
+                        <td>
+                          April 05, 2015
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="py-1">
+                          <img src="../../images/faces/face7.jpg" alt="image"/>
+                        </td>
+                        <td>
+                          Henry Tom
+                        </td>
+                        <td>
+                          <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </td>
+                        <td>
+                          $ 150.00
+                        </td>
+                        <td>
+                          June 16, 2015
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
-               <!-- les autres infos se rangent ici -->
-
-               <div id="toff"></div> <div ></div>
               </div>
             </div>
+          </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

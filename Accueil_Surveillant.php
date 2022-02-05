@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>sovabity</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/logo-mini.svg" />
+  <link rel="shortcut icon" href="images/logo-mini.svg" />
 </head>
 <body>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/>SIAPP</a>
-          <a class="navbar-brand brand-logo-mini" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="Accueil.html"><img src="images/logo-mini.svg" alt="logo"/>SIAPP</a>
+          <a class="navbar-brand brand-logo-mini" href="Accueil.html"><img src="images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -39,7 +39,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" placeholder="Rechercher un  étudiant" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -48,7 +48,7 @@
          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
+              <img src="images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
               <span class="nav-profile-name">Administrateur</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -74,13 +74,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-        <a class="nav-link" href="../../user_table/Accueil.html">
+        <a class="nav-link" href="#">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../Identification_sur.html">
+            <a class="nav-link" href="Identification_surveillant.php">
               <i class="mdi mdi-account-check"></i>
               <span class="menu-title">Identification</span>
             </a>
@@ -100,12 +100,12 @@
             </div>
           </li>
           -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="../../pages/charts/chartjs.html">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">Statistiques</span>
             </a>
-          </li>
+          </li> -->
             <!-- partial 
           <li class="nav-item">
             <a class="nav-link" href="pages/icons/mdi.html">
@@ -159,7 +159,7 @@
                         <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-calendar-heart icon-lg me-3 text-primary"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Start date</small>
+                            <small class="mb-1 text-muted">Date actuel</small>
                             <div class="dropdown">
                               <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
@@ -175,7 +175,7 @@
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">Total views</small>
+                            <small class="mb-1 text-muted">Total identifier</small>
                             <h5 class="me-2 mb-0">9833550</h5>
                           </div>
                         </div>
@@ -192,15 +192,15 @@
         <!-- 
 
          -->
-         <div class="col-lg-12 grid-margin stretch-card">
+         <!-- <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Information d'identificaion</h4>
                 <p class="card-description">
-                code : 
+                code :  -->
                 <!-- Matricule :-->
                 <!-- Code QR : <img src="" alt=""> QR code -->
-                </p>
+                <!-- </p>
                 <div class="table-responsive pt-3">
                   <table class="table table-dark">
                     <thead>
@@ -238,11 +238,11 @@
                   </table>
                 </div>
                <!-- les autres infos se rangent ici -->
-
+<!-- 
                <div id="toff"></div> <div ></div>
               </div>
             </div>
-        </div>
+        </div> --> 
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">

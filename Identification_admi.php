@@ -7,24 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>sovabity</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="../../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/logo-mini.svg" />
+  <link rel="shortcut icon" href="images/logo-mini.svg" />
 </head>
 <body>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/>SIAPP</a>
-          <a class="navbar-brand brand-logo-mini" href="../../Accueil.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="Accueil.html"><img src="images/logo-mini.svg" alt="logo"/>SIAPP</a>
+          <a class="navbar-brand brand-logo-mini" href="Accueil.html"><img src="images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -48,7 +48,7 @@
          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="../../images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
+              <img src="images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
               <span class="nav-profile-name">Administrateur</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -74,13 +74,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-        <a class="nav-link" href="../../user_table/Accueil.html">
+            <a class="nav-link" href="Accueil_admi.php">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../Identification_sur.html">
+            <a class="nav-link" href="Identification_admi.php">
               <i class="mdi mdi-account-check"></i>
               <span class="menu-title">Identification</span>
             </a>
@@ -101,9 +101,28 @@
           </li>
           -->
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/charts/chartjs.html">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Enregistrement</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+               
+                <li class="nav-item"> <a class="nav-link" href="Utlisateur.php">Personel</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="charts_admi.php">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">Statistiques</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basic-table.php">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Liste etudiants</span>
             </a>
           </li>
             <!-- partial 
@@ -122,9 +141,11 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li> -->
               </ul>
             </div>
           </li>
@@ -197,45 +218,12 @@
               <div class="card-body">
                 <h4 class="card-title">Information d'identificaion</h4>
                 <p class="card-description">
-                code : 
                 <!-- Matricule :-->
                 <!-- Code QR : <img src="" alt=""> QR code -->
+                <label for=""> Données biométrique : </label><label for=""><!-- ici c'est les données numérique recupéré par le lecteur --></label>
                 </p>
                 <div class="table-responsive pt-3">
-                  <table class="table table-dark">
-                    <thead>
-                      <tr>
-                        <th>
-                          Specilite
-                        </th>
-                        <th>
-                          Nom et prenom
-                        </th>
-                        <th>
-                          Montant payé
-                        </th>
-                        <th>
-                          Date de payement
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          1
-                        </td>
-                        <td>
-                          Herman Beck
-                        </td>
-                        <td>
-                          $ 77.99
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  
                 </div>
                <!-- les autres infos se rangent ici -->
 
