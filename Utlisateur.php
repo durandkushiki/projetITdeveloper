@@ -198,7 +198,7 @@
                     <form class="forms-sample" method="POST" action="enregistrement_pers.php">
 
                     <div class="form-group">
-                        <label for="exampleInputUsername1">Numéro</label>
+                        <label for="exampleInputUsername1">Matricule</label>
                         <input type="number" class="form-control" id="exampleInputUsername1" placeholder="Identifiant" name="identifiant" required="required">
                       </div>
 
