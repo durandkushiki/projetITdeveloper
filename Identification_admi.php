@@ -48,7 +48,7 @@
          
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
+              <img src="../../images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
               <span class="nav-profile-name">Administrateur</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -120,7 +120,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="basic-table.php">
+            <a class="nav-link" href="Etudiant_re.php">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Liste etudiants</span>
             </a>
@@ -214,23 +214,86 @@
 
          -->
          <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Information d'identificaion</h4>
-                <p class="card-description">
-                <!-- Matricule :-->
-                <!-- Code QR : <img src="" alt=""> QR code -->
-                <label for=""> Données biométrique : </label><label for=""><!-- ici c'est les données numérique recupéré par le lecteur --></label>
-                </p>
-                <div class="table-responsive pt-3">
-                  
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Informations d'identificaion</h4>
+              <p class="card-description">
+              <!-- Matricule :-->
+              <!-- Code QR : <img src="" alt=""> QR code -->
+              <label for=""> Données biométrique : </label><label for=""><!-- ici c'est les données numérique recupéré par le lecteur --></label>
+              </p> 
+              <p> <label for=""> <h2> Le seuil a été défini à : </h2></label><label for=""><h3 class="text-danger"><!-- le seuil que le dacc a defini --> <label for="">%</label></h3></label> </h2> </p>
+              <div class="table-responsive pt-3">
+                <div class="case2" style="display:flex; height: 30em;">
+                <div class="bloc1" style="flex: 50%; margin-left: 10em; margin-top: 2em;">
+                  <img src="images/ISSAM_Institut_Logo_200.png " alt=" photo" width="100%" height="100%"><!-- normalement c'est le lien enregistré dans la Bd qui doit être là pour que la BD soit chargé -->
                 </div>
-               <!-- les autres infos se rangent ici -->
-
-               <div id="toff"></div> <div ></div>
+                <div class="bloc2" style=" margin-left: 10em; margin-top: 2em;">
+                  <h1 class="text-primary" >Droit universitaire</h1><br>
+                  <div class="cas"> 
+                    <label for="">Année scolaire :</label> <h2> <!-- Année scolaire academique en cour --> </h2><br>
+                    <label for="">Montant actuel :</label> <h2> <!-- montant de la pension actuelle --> </h2><br>
+                    <label for="">Montant à payé :</label> <h2> <!-- ici on fait le" montant normal - le montant actuel de sa pension" --></h2>
+                  </div> 
+                    <div>
+                      <label for="">Date de payement : </label><label for=""> <h2> <!-- la date de payement de la bd --></h2> </label>
+                     <div class="form-check form-check-success">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" >
+                          Terminé
+                        </label>
+                      </div> <h2> <!-- spécialité --> </h2>
+                    </div>
+                </div>
               </div>
-            </div>
-        </div>
+
+              <div class="case1" style="display:flex; height: 40em;">
+                <div class="bloc3" style="flex: 50%; margin-left: 0%;  margin-top: 2em; margin-left: 2em;"> 
+                  <p>Graphe</p>
+                  <div class="row">
+                    <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title">Statistiques</h4>
+                          <canvas id="pieChart"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                    
+                </div>
+                </div>
+                <div class="bloc4" style="margin-top: 2em; margin-left: 2em;"> 
+                  <h1 class="text-primary">Informations </h1>
+<div class="cas"> <label for="">Nom:</label> <h2><!-- ici c'est le nom --> </h2>
+<label for="">Prenom :</label> <h2> <!-- le prenom --></h2>
+<label for="">Sexe :</label> <h2> <!-- le sexe --></h2>
+</div> 
+<div>
+  <label for="">Filiere : </label> <h2> <!-- la filière --></h2> 
+  <label for="">Option :</label> <h2> <!-- spécialité --> </h2>
+  <label for="">Niveau :</label> <h2> <!-- le niveau --> </h2>
+</div>
+<br>
+                </div>
+              </div>
+
+              </div>
+             <!-- les autres infos se rangent ici 
+
+             <div id="toff"></div> <div ></div>
+            </div>-->
+          </div>
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:partials/_footer.html -->
+      <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="nous.html" target="_blank">SIAPP.com </a>2021</span>
+       
+      </div>
+      </footer>
+      <!-- partial -->
+    </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
@@ -251,11 +314,19 @@
   <script src="vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
+  <script src="../../vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/datatables.net/jquery.dataTables.js"></script>
   <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../../js/chart.js"></script>
+  <!-- End custom js for this page-->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/template.js"></script>

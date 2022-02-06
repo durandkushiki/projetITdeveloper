@@ -1,28 +1,3 @@
-<?php
-      require("code php/connexion.php");
-
-      if (isset($_POST['nom']) and isset($_POST['mail']) and isset($_POST['pass']) and isset($_POST['poste'])) {
-        
-
-    $ma_requete = $var_connection->prepare('INSERT INTO personnel (username, mail, password, poste) VALUES (:username, :mail, :password, :poste)');
-      $ma_requete->execute( array(
-        'username'=>$_POST['nom'],
-        'mail'=>$_POST['mail'],
-        'password'=>$_POST['pass'],
-        'poste'=>$_POST['poste']
-
-      ));
-
-      // vider tous les champs
-
-      $_POST['nom']="";
-      $_POST['mail']="";
-      $_POST['pass']="";
-      $_POST['poste']="";
-
-      }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,7 +120,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="basic-table.php">
+            <a class="nav-link" href="Etudiant_re.php">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Liste etudiants</span>
             </a>
@@ -196,18 +171,23 @@
                     <h4 class="card-title">Formulaire d'enregistrement d'un  personnel</h4>
 
                     <!-- la balise form -->
-                    <form class="forms-sample" method="post" action="#">
+                    <form class="forms-sample" method="POST" action="enregistrement_pers.php">
+
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Numéro</label>
+                        <input type="number" class="form-control" id="exampleInputUsername1" placeholder="Identifiant" name="identifiant" required="required">
+                      </div>
 
                       <div class="form-group">
-                        <label for="exampleInputUsername1">Username</label>
+                        <label for="exampleInputUsername1">Nom d'utilisateur</label>
                         <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="nom" required="required">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="mail" required="required">
+                        <label for="exampleInputEmail1">Adresse mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="monmail" required="required">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1">Mot de pass</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pass" required="required">
                       </div>
                       <div class="form-group">
@@ -216,8 +196,8 @@
                       </div>
                       <div class="form-check form-check-flat form-check-primary">
                         <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">
-                          Remember me
+                          <input type="checkbox" class="form-check-input"  name="careau">
+                          se souvenir de moi
                         </label>
                       </div>
                       <button type="submit" class="btn btn-primary me-2">Enregistrer</button>
