@@ -13,17 +13,15 @@ $date_paid=htmlspecialchars($_POST['date_payement']);
 $adres=htmlspecialchars($_POST['adresse']);
 $town=htmlspecialchars($_POST['ville']);
 $country=htmlspecialchars($_POST['pays']);
-$toff=htmlspecialchars($_POST['image']);
 
-$_FILES['image']['name'];
-echo $_FILES['image']['name'] ;
+$nom_tof=$_FILES['image']['name'];
 
 if (isset($_FILES['image']) && $_FILES['image']['size']<= 1048576 && $_FILES['image']['error']==0 ) {
 	$infosfichier=pathinfo($_FILES['image']['name']);
 	$textupload=$infosfichier['extension'];
 	$ext_autorises=array('jpg','jpeg','gif','png','pdf');
 	 if (in_array($textupload, $ext_autorises)) {
-	 	copy($_FILES['image']['tmp_name'],'C:/wamp/www/projetITdeveloper/images/Photo_etudiant/'.basename($_FILES['image']['name']));
+	 	move_uploaded_file($_FILES['image']['tmp_name'],'C:/wamp/www/projetITdeveloper/images/Photo_etudiant/'.basename($_FILES['image']['name']));
 	 	echo "le fichier a ete bien telecharge";
 	 }
 	}
@@ -45,7 +43,7 @@ if(empty($_POST['digitale']) || empty($_POST['nom']) || empty($_POST['prenom']) 
 		
 		// $resql="INSERT INTO `users` (`user_name`, `user_password`,`statut_user`,`adresse`,`mobile`)VALUES('$utilisateur','$code','Etudiant','$mail',$tel)";
 				$sql="INSERT INTO `etude` (`biometrique`,`nom`,`prenom`,`sexe`,`dateN`,`filiere`,`niveau`,`montant`,`dateP`,`adresse`,`ville`,`pays`,`photo`)
-							VALUES('$bio','$nomstg', '$prenom','$sexe','$date_nai', '$filier',$niveauetu,$montans_verse,'$date_paid', '$adres', '$town', '$country','$toff')";
+							VALUES('$bio','$nomstg', '$prenom','$sexe','$date_nai', '$filier',$niveauetu,$montans_verse,'$date_paid', '$adres', '$town', '$country','$nom_tof')";
 		if (mysqli_query($conn, $sql)  ) {
 			
 			echo "Etudiant ajout&eacute; avec succès";
