@@ -1,39 +1,3 @@
-<?php
-require('code php/connexion.php');
-
-  if ( isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['sexe']) && isset($_POST['dnaiss']) && isset($_POST['filiere']) && isset($_POST['niveau']) && isset($_POST['image']) && isset($_POST['digital']) && isset($_POST['argent_verser']) && isset($_POST['date_payement']) && isset($_POST['adresse']) && isset($_POST['ville']) && isset($_POST['pays']))
-  {
-
-    $ma_requete = $var_connection->prepare('INSERT INTO etudiant 
-      (d_biometrique, nom, prenom, genre, date_naiss, filiere, niveau, Montant_ver, date_payement, adresse, ville, pays, nom_img, taille_img, type_img, bin_img) 
-      VALUES (:d_biometrique, :nom, :prenom, :genre, :date_naiss, :filiere, :niveau, :Montant_ver, :date_payement, :adresse, :ville, :pays,:nom_img, :taille_img, :type_img, :bin_img)');
-      $ma_requete->execute( array(
-        'd_biometrique'=>$_POST['digital'],
-        'nom'=>$_POST['nom'],
-        'prenom'=>$_POST['prenom'],
-        'genre'=>$_POST['sexe'],
-        'date_naiss'=>$_POST['dnaiss'], 
-        'filiere'=>$_POST['filiere'],
-        'niveau'=>$_POST['niveau'],
-        'Montant_ver'=>$_POST['argent_verser'],
-        'date_payement'=>$_POST['date_payement'],
-        'adresse'=>$_POST['adresse'],
-        'ville'=>$_POST['ville'],
-        'pays'=>$_POST['pays'],
-        'nom_img'=>$_FILES['image']['nom'],
-        'taille_img'=>$_FILES['image']['size'],
-        'type_img'=>$_FILES['image']['type'],
-        'bin_img'=>file_get_contents($_FILES['image']['tmp_name']) 
-
-      ));
-
-      var_dump($_POST['digital']);
-  }
-  else{
-    echo "erreur" ;
-  }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,8 +25,8 @@ require('code php/connexion.php');
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo-mini.svg" alt="logo"/>SIAPP</a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="Accueil_scolarite.php"><img src="images/logo-mini.svg" alt="logo"/>SIAPP</a>
+          <a class="navbar-brand brand-logo-mini" href="Accueil_scolarite.php"><img src="images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -111,7 +75,7 @@ require('code php/connexion.php');
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="Accueil_scolarite.php">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
             </a>
@@ -139,7 +103,7 @@ require('code php/connexion.php');
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/forms/Utlisateur.html">Personel</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Utlisateur.php">Personel</a></li>
               </ul>
             </div>
           </li>
@@ -150,7 +114,7 @@ require('code php/connexion.php');
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="Etudiant_re.php">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Liste etudiants</span>
             </a>
@@ -201,8 +165,7 @@ require('code php/connexion.php');
                   <h4 class="card-title">Formulaire d'enregistrement</h4>
 
                   <!-- debut form -->
-                  <form class="form-sample" method="post" action="" enctype="multipart/form-data">
-
+                  <form class="form-sample" method="post" action="enregistrement_etudiant.php" enctype="multipart/form-data">
 
                     <p class="card-description">
                       Informations personnels
@@ -273,6 +236,33 @@ require('code php/connexion.php');
                         </div>
                       </div>
 
+                      <!-- <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Option</label>
+                          <div class="col-sm-9">
+                            <select class="form-control" name="filiere" required="required">
+                              <option value="Genie informatique">Genie logiciel</option>
+                              <option value="Genie électrique">telecom</option>
+                              <option></option>
+                              <option  value="Genie mecanique et productique">Genie civil (cycle long)</option>
+                              <option value="Genie civil (cycle court)">Genie civil (cycle court)</option>
+                              <option value="Réseau et communication">Réseau et communication</option>
+                              <option value="QSSE">QSSE</option>
+                              <option value="Droit (cycle long)">Droit (cycle long)</option>
+                              <option value="Commerce- Vente"> Commerce- Vente</option>
+                              <option value="information et communication">information et communication</option>
+                              <option value="Gestion">Gestion</option>
+                              <option value="Etude médico-sanitaire">Etude médico-sanitaire</option>
+                              <option value="Science et techniques biomédicales">Science et techniques biomédicales</option>
+                              <option value="Art et métier de la culture">Art et métier de la culture</option>
+                              <option value="Tourisme, Hôtellerie et Restauration">Tourisme, Hôtellerie et Restauration</option>
+                              <option value="Capacité en droit science économique">Capacité en droit science économique</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div> -->
+
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
@@ -290,16 +280,17 @@ require('code php/connexion.php');
                           </div>
                         </div>
                         </div>
-                      <div class="form-group" style="width:25em;">
-                        <label>Charger un fichier</label>
-                        <input type="FILE" name="image">
-                        <div class="input-group col-xs-12">
-                          <!-- <input type="text" class="form-control file-upload-info" disabled placeholder="Charger l'image"> -->
+                        
+                       <div class="form-group" style="width:25em;">
+                        <label>Charger une image</label>
+                        <input type="hidden"  name="MAX-FILE-SIZE" value="1048576"> <input type="file" name="image">
+                        <!-- <div class="input-group col-xs-12">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Charger l'image"> 
                           <span class="input-group-append">
-                            <!-- <button class="file-upload-browse btn btn-primary" type="button">charger</button> -->
+                           <button class="file-upload-browse btn btn-primary" type="button">charger</button> 
                           </span>
-                        </div>
-                      </div>
+                        </div> -->
+                      </div> 
                       <!-- 
                         <div class="form-group">
                         <label for="exampleInputPassword4">Matricule</label>
@@ -322,7 +313,7 @@ require('code php/connexion.php');
                           <div class="input-group-prepend">
                             <span class="input-group-text bg-primary text-white">$</span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Montont versé" aria-label="Amount (to the nearest dollar)" name="argent_verser" required="required">
+                          <input type="text" class="form-control" placeholder="Montant versé" aria-label="Amount (to the nearest dollar)" name="argent_verser" required="required">
                           <div class="input-group-append">
                             <span class="input-group-text">.00</span>
                           </div>

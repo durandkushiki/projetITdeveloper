@@ -74,21 +74,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-<<<<<<< HEAD:Utlisateur.php
             <a class="nav-link" href="Accueil_admi.php">
-=======
-            <a class="nav-link" href="#">
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Accueil</span>
             </a>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD:Utlisateur.php
             <a class="nav-link" href="Identification_admi.php">
-=======
-            <a class="nav-link" href="Identification_admi.html">
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
               <i class="mdi mdi-account-check"></i>
               <span class="menu-title">Identification</span>
             </a>
@@ -116,31 +108,19 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-               
-<<<<<<< HEAD:Utlisateur.php
                 <li class="nav-item"> <a class="nav-link" href="Utlisateur.php">Personel</a></li>
-=======
-                <li class="nav-item"> <a class="nav-link" href="basic_elements.html">Etudiant</a></li>
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
               </ul>
             </div>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD:Utlisateur.php
             <a class="nav-link" href="charts_admi.php">
-=======
-            <a class="nav-link" href="charts_admi.html">
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">Statistiques</span>
             </a>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD:Utlisateur.php
             <a class="nav-link" href="Etudiant_re.php">
-=======
-            <a class="nav-link" href="basic-table.html">
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
+
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Liste etudiants</span>
             </a>
@@ -162,11 +142,9 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li> -->
-<<<<<<< HEAD:Utlisateur.php
+
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Login 2 </a></li>
-=======
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
->>>>>>> 01401a4dde3b45c594f3e02670b468b148cfc5d6:Utlisateur.html
+
                 <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
                 <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li> -->
