@@ -206,191 +206,114 @@
             </div>
           </div>
          
+          
           <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Striped Table</h4>
-                <div style="display: flex; ">
-                  <div>
-              </div>
-              <div class="btn-group-vertical" role="group" aria-label="Basic example" style="margin-left: 88%;">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Trier</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item">Nom</a>
-                    <a class="dropdown-item">Matricule</a>
-                    <a class="dropdown-item">Spécialite</a>
-                    <a class="dropdown-item">Niveau</a>
-                    <a class="dropdown-item">sexe</a>
-                    <a class="dropdown-item">Age</a>
-                    <a class="dropdown-item">Solde</a>
-                  </div>                          
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Tous les etudiants</h4>
+                  <div style="display:flex">
+                    <div>
+                  <p class="card-description">
+                  </p></div> <div class="btn-group-vertical" role="group" aria-label="Basic example" style="margin-left: 88%;">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Trier</button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item">Nom</a>
+                        <a class="dropdown-item">Matricule</a>
+                        <a class="dropdown-item">Spécialite</a>
+                        <a class="dropdown-item">Niveau</a>
+                        <a class="dropdown-item">sexe</a>
+                        <a class="dropdown-item">Age</a>
+                        <a class="dropdown-item">Solde</a>
+                      </div>                          
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div >
-              </div>
-              </div>
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>
-                          User
-                        </th>
-                        <th>
-                          First name
-                        </th>
-                        <th>
-                          Progress
-                        </th>
-                        <th>
-                          Amount
-                        </th>
-                        <th>
-                          Deadline
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face1.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Herman Beck
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 77.99
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face2.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Messsy Adam
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $245.30
-                        </td>
-                        <td>
-                          July 1, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face3.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          John Richards
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $138.00
-                        </td>
-                        <td>
-                          Apr 12, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face4.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Peter Meggik
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 77.99
-                        </td>
-                        <td>
-                          May 15, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face5.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Edward
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 160.25
-                        </td>
-                        <td>
-                          May 03, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face6.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          John Doe
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 123.21
-                        </td>
-                        <td>
-                          April 05, 2015
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face7.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Henry Tom
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $ 150.00
-                        </td>
-                        <td>
-                          June 16, 2015
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            User
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Progress
+                          </th>
+                          <th>
+                            %
+                          </th>
+                          <th>
+                            current account paid
+                          </th>
+                          <th>
+                            Date of payment
+                          </th>
+                          <th>
+                            Amount to be paid
+                          </th>
+                          <th>
+                            Developper
+                          </th>
+                        </tr>
+                      </thead>
+                      <?php
+                                                     try {
+		
+                                                      $con =new PDO('mysql:host=localhost;dbname=gestion_stagiaire2;charset=utf8', 'durandkushiki', '19D2503M');
+                                                    
+                                                    }catch (Exception $e){
+                                                    die('Erreur : ' . $e->getMessage());
+                                                    
+                                                    die('Erreur : impossible de se connecter à la base de donnée');
+                                                    }	
+                                                    $reponse=$con->query("SELECT biometrique, nom, montant,dateP,sexe,Photo FROM etude");
+                                                        while($donnees=$reponse->fetch()) 
+                                                              {
+                                                                ?>
+                                                          
+                      <tbody>
+                        <tr>
+                          <td class="py-1">
+                            <img src="images/Photo_etudiant/<?php echo $donnees['Photo']; ?> " alt="image"/>
+                          </td>
+                          <td>
+                          <?php echo $donnees['nom']; ?>
+                          </td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo ($donnees['montant']*60)/100; ?>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                          <?php echo ($donnees['montant']*60)/100; ?>%
+                          </td>
+                          <td>
+                          <?php echo $donnees['montant']; ?>
+                          </td>
+                          <td>
+                          <?php echo $donnees['dateP']; ?>
+                          </td>
+                          <td>
+                          <?php echo 600000-$donnees['montant']; ?>
+                          </td>
+                          <td>
+                            <button class="mdi mdi-arrow-right"><a href="retrouver_etudian.php?sup= <?php echo $donnees['biometrique']; ?> ">Plus</a></button>
+                          </td>
+                        </tr>
+                        <?php
+                              }
+                        $pdo = null;
+                        ?>
+                      
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

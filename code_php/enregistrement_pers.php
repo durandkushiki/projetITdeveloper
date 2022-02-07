@@ -7,6 +7,17 @@ $nomp=htmlspecialchars($_POST['nom']);
 $adres=htmlspecialchars($_POST['mail']);
 $PWD=htmlspecialchars($_POST['pass']);
 $poste_pers=htmlspecialchars($_POST['poste']);
+$nom_tof=$_FILES['image']['name'];
+
+if (isset($_FILES['image']) && $_FILES['image']['size']<= 1048576 && $_FILES['image']['error']==0 ) {
+	$infosfichier=pathinfo($_FILES['image']['name']);
+	$textupload=$infosfichier['extension'];
+	$ext_autorises=array('jpg','jpeg','gif','png','pdf');
+	 if (in_array($textupload, $ext_autorises)) {
+	 	move_uploaded_file($_FILES['image']['tmp_name'],'C:/wamp/www/projetITdeveloper/images/Photo_etudiant/'.basename($_FILES['image']['name']));
+	 	echo "le fichier a ete bien telecharge";
+	 }
+	}
 
 
 if( empty($_POST['identifiant']) || empty($_POST['nom']) || $_POST['mail']|| empty($_POST['pass']) || empty($_POST['poste']) ){
@@ -20,8 +31,8 @@ if( empty($_POST['identifiant']) || empty($_POST['nom']) || $_POST['mail']|| emp
 		echo '<body onLoad="alert(\'personnel existant!\')">';
 		echo '<meta http-equiv="refresh" content="0;URL=Etudiant_re.php">';
 	}else{
-		$sql="INSERT INTO projet (id,user, mail, password, poste)
-						VALUES($numprog, '$nomp', '$adres','$PWD', '$poste_pers')";
+		$sql="INSERT INTO projet (id,nom_personnel,	Poste,password,	adress_mail,photo )
+						VALUES($numprog, '$nomp', '$adres','$PWD', '$poste_pers','$nom_tof')";
 		if (mysqli_query($conn, $sql)) {
 			echo "Enregistrement effectu&eacute; avec succès";
 			echo '<meta http-equiv="refresh" content="0; URL=Utilisateur.php">';

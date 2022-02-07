@@ -125,6 +125,12 @@
               <span class="menu-title">Liste etudiants</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="afficher_pers.php">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Liste personnel</span>
+            </a>
+          </li>
             <!-- partial 
           <li class="nav-item">
             <a class="nav-link" href="pages/icons/mdi.html">

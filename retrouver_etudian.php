@@ -5,7 +5,17 @@ if(isset($_GET['sup'])){
 	$id=$_GET['sup'];
 
  
+  if(isset($_GET['motCle']))
+  $mc=$_GET['motCle'];
+  else
+  $mc=""; 
 
+  if(isset($_GET['page']))
+		$page=$_GET['page'];
+	else
+		$page=1;
+			
+	$offset=($page-1)*$size;
 
     ?>  
 
@@ -44,19 +54,41 @@ if(isset($_GET['sup'])){
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <ul class="navbar-nav mr-lg-4 w-100">
           <li class="nav-item nav-search d-none d-lg-block w-100">
+            <form action="#" method="$_POST">
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="search">
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <?php
+              $bdd = new PDO('mysql:host=localhost;dbname=gestion_stagiaire2;charset=utf8', 'durandkushiki', '19D2503M',
+            array(PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION));
+            
+              if(isset($_POST['search-rendez-vous']))
+              {
+                $nom=$_POST['search'];	
+                $requete=$bdd->query("SELECT nom ,filiere FROM etude WHERE nom='$nom' and nom like '%$mc%'");
+                
+		while($info=$requete->fetch()) 
+		{
+    ?>  
+              <input type="text" class="form-control" placeholder="Taper un nom" value="<?php echo $info['nom'];  echo $info['filiere']; ?>" name="motCle"  aria-label="search" aria-describedby="search">
+								<button type="submit" class="btn btn-success">
+									<i class="glyphicon glyphicon-search"></i>
+									Chercher...
+								</button>
+								&nbsp&nbsp&nbsp
             </div>
+            </form>
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-      
-         
+        <?php
+        $pdo=null;
+    }
+    }
+    ?>    
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
               <img src="../../images/faces/ISSAM_Institut_Logo_200.png" alt="profile"/>
@@ -221,11 +253,18 @@ if(isset($_GET['sup'])){
         <!-- c'est ici que je dois  metre la façon dont les infos seront affichées --> 
         <?php
  
- require('connexion.php');
  
-
- $result = mysqli_query($conn,"SELECT * FROM etude where biometrique='$id'");
- while($data = mysqli_fetch_array($result))
+ 
+ try  //Connection a la bdd
+ {
+  $bdd = new PDO('mysql:host=localhost;dbname=gestion_stagiaire2;charset=utf8', 'durandkushiki', '19D2503M');
+ }
+ catch (Exception $e)
+ {
+  die('Erreur : ' . $e->getMessage());
+ }
+ $resultat=$bdd->query("select * from etude where biometrique='$id'");
+ while($da=$resultat->fetch())
   {
         ?>
          <div class="col-lg-12 grid-margin stretch-card">
@@ -235,24 +274,24 @@ if(isset($_GET['sup'])){
               <p class="card-description">
               <!-- Matricule :-->
               <!-- Code QR : <img src="" alt=""> QR code -->
-              <label for=""> Données biométrique : </label><label for=""><?php echo $data['biometrique']; ?><!-- ici c'est les données numérique recupéré par le lecteur --></label>
+              <label for=""> Données biométrique : </label><label for=""><?php echo $da['biometrique']; ?><!-- ici c'est les données numérique recupéré par le lecteur --></label>
               </p> 
               <p> <label for=""> <h2> Le seuil a été défini à : </h2></label><label for=""><h3 class="text-danger"><!-- le seuil que le dacc a defini --> <label for="">%</label></h3></label> </h2> </p>
               <div class="table-responsive pt-3">
                 <div class="case2" style="display:flex; height: 30em;">
                 <div class="bloc1" style="flex: 50%; margin-left: 10em; margin-top: 2em;">
-                  <img src="images/Photo_etudiant/<?php echo $data['Photo']; ?> " alt=" photo" width="100%" height="100%"><!-- normalement c'est le lien enregistré dans la Bd qui doit être là pour que la BD soit chargé -->
+                  <img src="images/Photo_etudiant/<?php echo $da['Photo']; ?> " alt=" photo" width="100%" height="100%"><!-- normalement c'est le lien enregistré dans la Bd qui doit être là pour que la BD soit chargé -->
                 </div>
                 <div class="bloc2" style=" margin-left: 10em; margin-top: 2em;">
                   <h1 class="text-primary" >Droit universitaire</h1><br>
                   <div class="cas"> 
                     <label for="">Année scolaire :</label> <h2><?php echo $daa; ?> <!-- Année scolaire academique en cour --> </h2><br>
-                    <label for="">Montant actuel :</label> <h2><?php echo $data['montant']; ?> <!-- montant de la pension actuelle --> </h2><br>
-                    <label for="">Montant à payé :</label> <h2><?php echo $som=600000; $mtpai=$som-$data['montant']; ?> <!-- ici on fait le" montant normal - le montant actuel de sa pension" --></h2>
+                    <label for="">Montant actuel :</label> <h2><?php echo $da['montant']; ?> <!-- montant de la pension actuelle --> </h2><br>
+                    <label for="">Montant à payé :</label> <h2><?php echo $som=600000; $mtpai=$som-$da['montant']; ?> <!-- ici on fait le" montant normal - le montant actuel de sa pension" --></h2>
                   </div> 
                     <div>
-                      <label for="">Date de payement : </label><label for=""> <h2><?php echo $data['dateP']; ?> <!-- la date de payement de la bd --></h2> </label>
-                      <?php  if($data['montant'] < 600000){ ?>
+                      <label for="">Date de payement : </label><label for=""> <h2><?php echo $da['dateP']; ?> <!-- la date de payement de la bd --></h2> </label>
+                      <?php  if($da['montant'] < 600000){ ?>
                      <div class="form-check form-check-success">
                         <label class="form-check-label">
                           <input type="checkbox" class="form-check-input"  >
@@ -308,7 +347,7 @@ if(isset($_GET['sup'])){
               </div>
               <?php 
             }
-mysqli_close ($conn) ;
+            $pdo = null;
 ?>         
               </div>
               
